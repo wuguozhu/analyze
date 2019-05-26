@@ -41,20 +41,20 @@ public class KafkaStreamingWordCount {
         final Pattern SPACE = Pattern.compile(",");
 
         //zookeeper 地址
-        String zkQuorum = "localhost:2181";
+        String zkQuorum = "192.168.6.174:2181";
 
         //消费组
         String group = "kafka-test";
 
         //主题
-        String topic = "test-topic";
+        String topic = "test";
 
         //每个话题的分片数
         int numThreads = 2;
 
 
         //拿配置
-        SparkConf sparkConf = new SparkConf().setAppName("JavaKafkaWordCount");
+        SparkConf sparkConf = new SparkConf().setAppName("JavaKafkaWordCount").setMaster("local[*]");
 
         //上下文
         JavaStreamingContext jsc = new JavaStreamingContext(sparkConf, new Duration(10000));

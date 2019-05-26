@@ -37,15 +37,7 @@ public class ExampleTest {
 
     public static void main(String[] args){
 
-<<<<<<< HEAD
-        SparkConf sc = new SparkConf().setAppName("ExampleTest").setMaster("local[2]");
-        JavaSparkContext jsc = new JavaSparkContext(sc);
 
-        HiveContext hc = new HiveContext(jsc);
-
-        hc.sql("").show();
-
-=======
         SparkConf sc = new SparkConf().setAppName("ExampleTest").setMaster("local[2]"); //获取spark配置
         JavaSparkContext jsc = new JavaSparkContext(sc); //spark 上下文
         JavaRDD<String> lines  = jsc.textFile(data); //读取数据
@@ -84,6 +76,6 @@ public class ExampleTest {
             System.out.println(tuple._1() + ": " + tuple._2());
         }
         jsc.stop(); //关闭spark 上下文
->>>>>>> bbcf17787eb36dd765e68e24a8589a0c5e1398d8
+
     }
 }
